@@ -36,8 +36,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -78,6 +78,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -104,9 +105,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\DTOUserShapeTable.cs" />
+    <Compile Include="DTO\DTOUserBoard.cs" />
+    <Compile Include="DTO\DTOUserTable.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="AutoMapperProfile.cs" />
+    <Compile Include="Migrations\201909112035182_FirstModel.cs" />
+    <Compile Include="Migrations\201909112035182_FirstModel.Designer.cs">
+      <DependentUpon>201909112035182_FirstModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Jersey.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Club.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserShapeTable.cs" />
+    <Compile Include="Models\UserTable.cs" />
+    <Compile Include="Models\Training.cs" />
+    <Compile Include="Models\UserBoard.cs" />
+    <Compile Include="Models\UserTraining.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,8 +133,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="Migrations\" />
+    <EmbeddedResource Include="Migrations\201909112035182_FirstModel.resx">
+      <DependentUpon>201909112035182_FirstModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
