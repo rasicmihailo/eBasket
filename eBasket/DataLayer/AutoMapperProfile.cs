@@ -17,6 +17,12 @@ namespace DataLayer
             CreateMap<UserBoard, DTOUserBoard>();
             CreateMap<UserShapeTable, DTOUserShapeTable>();
             CreateMap<UserTable, DTOUserTable>();
+            CreateMap<ApplicationUser, DTOAppUser>();
+            CreateMap<Models.Action, DTOAction>();
+            CreateMap<Club, DTOClub>();
+            CreateMap<Jersey, DTOJersey>();
+            CreateMap<Training, DTOTraining>();
+            CreateMap<UserTraining, DTOUserTraining>();
         }
     }
 }
